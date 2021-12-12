@@ -1,0 +1,34 @@
+/*
+ * 
+ * checked exception : IOException 
+ * 				FileNotFound
+ * 				ClassNotFoundException
+ * 				SQLException
+ * 				Exception
+ * 
+ * 
+ * unchecked exception : (RuntimeException)
+ * 				ArithmeticException
+ * 				NullPointerExeption
+ * 				ArrayIndexOutOfBounds
+ * 				NumberFormat
+
+ */
+
+class A extends Exception{	 }
+class B extends A{	}
+
+class MainClass{
+
+ public static void main(String [] args){
+ 
+	 try
+	 {
+		 throw new B();
+	 }
+	 catch(A e)
+	 {
+		System.out.println("catch"); 
+	 }
+ }
+ }

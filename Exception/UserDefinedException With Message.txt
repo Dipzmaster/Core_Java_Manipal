@@ -1,0 +1,53 @@
+
+// create my own user defined exception
+import java.util.*;
+
+class ProjectorNotWorkingException extends Exception
+{
+	ProjectorNotWorkingException(String msg)
+	{
+		super(msg); // pass value to base class constructor
+		
+	}
+	
+}
+
+public class MainClass {
+	
+	public static void training()throws ProjectorNotWorkingException
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println(" Is remote contol available? (yes/no):");
+		String remoteControl=sc.next();
+		
+		if(remoteControl.equals("no"))
+				throw new ProjectorNotWorkingException("Some issue with Projector system");
+					
+			System.out.println(" ===Continue Training smoothly===");																	
+				
+	}
+	
+	
+	public static void main(String[] args) {
+	
+	
+		try
+		{
+			training();
+		}
+		catch(ProjectorNotWorkingException e)
+		{
+			
+			// any code to handle
+			System.out.println(e.getMessage());
+		}
+		 
+		
+		
+		
+	
+		
+		
+		
+	}
+}

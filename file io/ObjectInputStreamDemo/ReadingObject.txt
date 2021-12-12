@@ -1,0 +1,89 @@
+package com.mage.ibmbatchdemo;
+import java.io.*;
+
+// program for writing to object
+
+/*
+ * ObjectOutputStream : is used to store the state of an object
+ * into secondary storage 
+ * 
+ * Student object needs to be persisted 
+ * 
+ * Persistent object must implement from Serializatible interface
+ * 
+ *   Serializable interface does not have any method to implement
+ *   It is called s marker interface
+ *   
+ *   Just by making the class implement Serializable does not persist
+ *   the object into secondary storage. Object needs to be persisted
+ *   by using ObjectOutputStream.
+ */
+
+class Student implements Serializable
+{
+	private int roll;
+	private String name;
+	private double marks;
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getMarks() {
+		return marks;
+	}
+	public void setMarks(double marks) {
+		this.marks = marks;
+	}
+	
+	
+}
+public class CopyOfObjectSerializationDemo {
+
+	public static void main(String[] args) {				
+		
+		FileInputStream fis=null;
+		try
+		{
+		 fis=new FileInputStream("d:/myfolder/student.obj");
+		 ObjectInputStream ois=new ObjectInputStream(fis);
+		 Student s=(Student)ois.readObject();
+		 
+		 System.out.println("roll="+s.getRoll());
+		 System.out.println(" name="+s.getName());
+		 System.out.println("marks="+s.getMarks());		 
+		 
+		}
+		catch(ClassNotFoundException e)
+		{
+			System.out.println(e);
+		}
+		catch(FileNotFoundException e)
+		{
+			
+		}
+		catch(IOException e)
+		{
+			
+		}
+		finally
+		{
+			try{
+			fis.close();
+			}
+			catch(IOException e)
+			{
+				
+			}
+		}
+		
+		
+	}
+}
