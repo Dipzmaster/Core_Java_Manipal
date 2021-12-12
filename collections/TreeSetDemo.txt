@@ -1,0 +1,36 @@
+package com.mage.collectionsdemo;
+
+
+
+import java.util.*;
+public class TreeSetDemo {
+	public static void main(String[] args) {
+	
+		
+	Set <String>s=new TreeSet<String>();
+	
+	
+	s.add("mohan");
+	s.add("alok");
+	s.add("bashu");
+	s.add("zombi");
+	
+	
+	
+	for(String str:s)
+	{
+		System.out.println(str);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	}
+
+}
