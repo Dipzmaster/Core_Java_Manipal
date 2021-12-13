@@ -1,0 +1,21 @@
+1. Get oracle jdbc driver from following folder : 
+C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
+
+
+
+
+
+
+2. In case of getting TNSAdapter error..
+Open tnsnames.ora and listener.ora files 
+(Location :-> C:\oraclexe\app\oracle\product\11.2.0\server\network\ADMIN)
+and change HOST=admin to HOST=<your computer name>
+
+then go to Services (Control Panel -> Administrative Tools -> Services )
+Run OracleXETNSListener service and Restart OracleServiceXE service
+
+
+
+
+
+
