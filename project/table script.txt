@@ -1,0 +1,9 @@
+create table fooditem(
+itemid varchar2(20),
+itemname varchar2(20),
+itemtype varchar2(20),
+price number,
+quantity number
+);
+
+create sequence itemseq2 start with 101
